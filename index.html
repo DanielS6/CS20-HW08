@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Fun</title>
+    <link rel="stylesheet" type = "text/css" href="./styles.css">
+    <script src="./script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>API Fun</h1>
+    <div id="body-content">
+        <div class="content-question">
+            <strong>Results via AJAX</strong>
+            <p id="ajax-results">Loading...</p>
+        </div>
+        <div class="content-question">
+            <strong>Results via <code>fetch()</code></strong>
+            <p id="fetch-results">Loading...</p>
+        </div>
+        <div class="content-question">
+            <strong>Describe the API you selected and what it does</strong>
+            <p>
+            The API I selected in the MediaWiki Action API, which allows clients
+            to interact with a MediaWiki wiki programmatically, rather than
+            requiring loading the user interface. It is used for everything
+            from making edits, to changing account permissions, to even deleting
+            or undeleting a page. See the full documentation on
+            <a href="https://www.mediawiki.org/wiki/Special:MyLanguage/API:Main_page">
+                MediaWiki.org</a>
+            for further details.
+            </p>
+        </div>
+        <div class="content-question">
+            <strong>Cite the website where you found it</strong>
+            <p>
+            The website where I found the API endpoint that I was accessing
+            is on the English Wikipedia, at
+            <a href="https://en.wikipedia.org/w/api.php">
+                https://en.wikipedia.org/w/api.php</a>,
+            which also provides human-readable documentation for the different
+            ways that the API can be used.
+            </p>
+        </div>
+        <div class="content-question">
+            <strong>Describe the options you used for the API request</strong>
+            <p>The options that I used are as follows:</p>
+            <table id="api-options">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>action</td>
+                        <td>query</td>
+                        <td>Use the `query` module, which is the primary module
+                            for retrieving data.</td></tr>
+                    <tr><td>meta</td>
+                        <td>siteinfo</td>
+                        <td>Tell the `query` class to retrieve the `siteinfo`
+                            meta information, which is used for information
+                            about the target site.</td></tr>
+                    <tr><td>siprop</td>
+                        <td>statistics</td>
+                        <td>Tell the `siteinfo` class to get information about
+                            the 'statistics' property (the `si` at the start
+                            of the option name is to disambiguate the option
+                            from a 'prop' option in any other class).</td></tr>
+                    <tr><td>format</td>
+                        <td>json</td>
+                        <td>Return the data as a JSON object, rather than one
+                            of the other supported formats.</td></tr>
+                    <tr><td>formatversion</td>
+                        <td>2</td>
+                        <td>Use the second version of the JSON format that the
+                            API provides, which notably uses true/false values
+                            for boolean properties rather than a key with an
+                            empty string value for true and being absent for
+                            false.</td></tr>
+                    <tr><td>origin</td>
+                        <td>*</td>
+                        <td>Tell MediaWiki that the request is coming from an
+                            unauthenticated source and should not be checked
+                            against CORS (which also prevents using some parts
+                            of the API which require authentication).</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content-question">
+            <strong>Give two applications where this API would be helpful</strong>
+            <p>This API would be useful for applications that want to monitor
+                recent changes for vandalism, or for those who want to retrieve
+                the text of articles to be used somewhere else.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    font-size: 16pt;
+}
+
+h1 {
+    /* Center the heading text */
+    text-align: center;
+}
+
+#body-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.content-question {
+    margin-top: 30px;
+}
+.content-question p {
+    margin-top: 5px;
+}
+
+#api-options,
+#api-options td,
+#api-options th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
